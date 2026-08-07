@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { v4 as uuidv4} from 'uuid';
 
-function TransactionForm({ onAddTransaction }) {
+function TransactionForm({ onAddTransaction, dataFormatada }) {
     const [description, setDescription] = useState('');
     const [amount, setAmount] = useState('');
     const [type, setType] = useState('entrada');
@@ -20,6 +20,7 @@ function TransactionForm({ onAddTransaction }) {
             description: description.trim(),
             amount: type === 'entrada' ? Number(amount) : -Number(amount),
             type: type,
+            date: dataFormatada,
         };
         onAddTransaction(newTransaction);
         setDescription('');

@@ -7,8 +7,8 @@ function TransactionList({ transactions, onDeleteTransaction }) {
         <ul>
             {transactions.map((transaction) =>
             ( <li key={transaction.id}>
-                {transaction.description} - {transaction.amount} - {transaction.amount > 0 ? <MdKeyboardDoubleArrowUp />
-: <MdKeyboardDoubleArrowDown />} - {transaction.type}
+                {transaction.description} | {transaction.amount} | {transaction.amount > 0 ? <MdKeyboardDoubleArrowUp />
+: <MdKeyboardDoubleArrowDown />} | {transaction.date} |
             <span onClick={() => onDeleteTransaction(transaction.id)}>
                 <FaTrash />
             </span>

@@ -20,17 +20,19 @@ function App() {
   useEffect(() => {
     localStorage.setItem('my_transactions', JSON.stringify(transactions));
   }, [transactions]);
+  const dataAtual = new Date();
+  const dataFormatada = dataAtual.toLocaleDateString('pt-br')
   return (
     <div className='app'>
-      <PrimeiroComponente />
+      <PrimeiroComponente dataFormatada={dataFormatada}/>
       <div className='grid-layout'>
         <div className='painel-esquerdo'>
           <h2>Saldo Total: {calcularSaldoTotal}</h2>
           <GraficoFinanceiro transactions={transactions} />
         </div>
         <div className='painel-direito'>
-          <h2>Controle Financeiro</h2>
-          <TransactionForm onAddTransaction={addTransaction} />
+          <TransactionForm onAddTransaction={addTransaction} 
+            dataFormatada={dataFormatada}/>
           <TransactionList 
             transactions={transactions}
             onDeleteTransaction={deleteTransaction}
