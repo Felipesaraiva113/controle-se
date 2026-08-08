@@ -29,7 +29,6 @@ function TransactionForm({ onAddTransaction, dataFormatada }) {
     };
     return (
         <form onSubmit={handleSubmit} className="transaction-form">
-            <h3>Nova Transação</h3>
             <input 
                 type="text" 
                 placeholder="Descrição"
