@@ -3,10 +3,12 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Courier New', Courier, monospace;
+    
 }
 body {
     background-color: black;
     color: white;
+    
 }
 .app {
   display: flex;
@@ -26,7 +28,6 @@ body {
 .grid-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 30px; 
   width: 100%;
 }
 .painel-esquerdo {
@@ -39,9 +40,12 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px; /* Espaçamento entre o Formulário e a Listagem */
+  align-items: center;
+  justify-content: flex-start;
 }
 @media (max-width: 768px) {
   .grid-layout {
     grid-template-columns: 1fr;
   }
+  
 }

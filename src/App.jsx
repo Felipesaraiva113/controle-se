@@ -4,6 +4,7 @@ import TransactionForm from './components/TransactionForm';
 import './styles/global.css';
 import TransactionList from './components/TransactionList';
 import GraficoFinanceiro from './components/PieChart';
+import classes from './components/App.module.css'
 
 function App() {
   const [transactions, SetTransactions] = useState(() => {
@@ -27,8 +28,8 @@ function App() {
       <PrimeiroComponente/>
       <div className='grid-layout'>
         <div className='painel-esquerdo'>
-          <h2>Saldo Total: {calcularSaldoTotal}</h2>
-          <GraficoFinanceiro transactions={transactions} />
+          <h2 className={classes.h2}>Saldo Total: {calcularSaldoTotal}</h2>
+            <GraficoFinanceiro transactions={transactions} />
         </div>
         <div className='painel-direito'>
           <TransactionForm onAddTransaction={addTransaction} 

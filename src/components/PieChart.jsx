@@ -25,14 +25,14 @@ export default function GraficoFinanceiro({ transactions = [] }) {
     cores = [COR_ENTRADA, COR_SAIDA];
   }
   return (
-    <div style={{ width: '100%', height: 350 }}>
-      <ResponsiveContainer width="100%" height="100%">
+    <div style={{ width: '100%', height: 600 }} >
+      <ResponsiveContainer width="100%" height="100%" >
         <PieChart>
           <Pie
             data={dataGrafico}
             cx="50%"
             cy="50%"
-            outerRadius={100}
+            outerRadius={250}
             dataKey="value"
           >
             {dataGrafico.map((entry, index) => (

@@ -29,7 +29,7 @@ function TransactionForm({ onAddTransaction, dataFormatada }) {
         setType('entrada');
     };
     return (
-        <form onSubmit={handleSubmit} className={classes.form}>
+        <form onSubmit={handleSubmit} className={classes.form} id="form">
             <input 
                 type="text" 
                 placeholder="Descrição"
@@ -40,6 +40,7 @@ function TransactionForm({ onAddTransaction, dataFormatada }) {
             <select
                 value={type}
                 onChange={(e) => setType(e.target.value)}
+                className={classes.select}
             >
                 <option value='entrada'>Entrada</option>
                 <option value='saida'>Saída</option>
@@ -51,7 +52,7 @@ function TransactionForm({ onAddTransaction, dataFormatada }) {
                 onChange={(e) => setAmount(e.target.value)}
                 className={classes.input}
             />
-            <button type="submit">Adicionar</button>
+            <button type="submit" className={classes.button}>Adicionar</button>
         </form>
     );
 } 
