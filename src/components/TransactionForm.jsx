@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { v4 as uuidv4} from 'uuid';
+import classes from './Form.module.css';
 
 function TransactionForm({ onAddTransaction, dataFormatada }) {
     const [description, setDescription] = useState('');
@@ -28,12 +29,13 @@ function TransactionForm({ onAddTransaction, dataFormatada }) {
         setType('entrada');
     };
     return (
-        <form onSubmit={handleSubmit} className="transaction-form">
+        <form onSubmit={handleSubmit} className={classes.form}>
             <input 
                 type="text" 
                 placeholder="Descrição"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
+                className={classes.input}
             />
             <select
                 value={type}
@@ -47,6 +49,7 @@ function TransactionForm({ onAddTransaction, dataFormatada }) {
                 min='0'
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}
+                className={classes.input}
             />
             <button type="submit">Adicionar</button>
         </form>

@@ -1,0 +1,10 @@
+.form {
+    background-color: gray;
+    padding: 50px;
+}
+.input {
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    border: none;
+}
