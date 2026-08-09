@@ -25,7 +25,9 @@ function App() {
   const dataFormatada = dataAtual.toLocaleDateString('pt-br')
   return (
     <div className='app'>
-      <PrimeiroComponente/>
+      <div className='header-container'>
+        <PrimeiroComponente/>
+      </div>
       <div className='grid-layout'>
         <div className='painel-esquerdo'>
           <h2 className={classes.h2}>Saldo Total: R$ {calcularSaldoTotal}</h2>
