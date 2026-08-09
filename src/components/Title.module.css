@@ -21,6 +21,8 @@
   .header {
     height: auto;
     padding: 15px 10px;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -28,5 +30,7 @@
   .h1 {
     font-size: 20px;
     text-align: center;
+    justify-content: center;
+    align-items: center;
   }
 }
