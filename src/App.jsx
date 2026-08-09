@@ -28,7 +28,7 @@ function App() {
       <PrimeiroComponente/>
       <div className='grid-layout'>
         <div className='painel-esquerdo'>
-          <h2 className={classes.h2}>Saldo Total: {calcularSaldoTotal}</h2>
+          <h2 className={classes.h2}>Saldo Total: R$ {calcularSaldoTotal}</h2>
             <GraficoFinanceiro transactions={transactions} />
         </div>
         <div className='painel-direito'>

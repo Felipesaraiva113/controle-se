@@ -36,6 +36,7 @@ function TransactionForm({ onAddTransaction, dataFormatada }) {
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 className={classes.input}
+                maxLength={6}
             />
             <select
                 value={type}
@@ -51,6 +52,7 @@ function TransactionForm({ onAddTransaction, dataFormatada }) {
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}
                 className={classes.input}
+                max='999'
             />
             <button type="submit" className={classes.button}>Adicionar</button>
         </form>
