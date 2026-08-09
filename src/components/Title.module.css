@@ -34,7 +34,7 @@
     max-width: 100% !important;
     height: auto !important; /* Permite a altura se adaptar ao conteúdo */
     padding: 15px 10px !important;
-    box-shadow: none !important; /* Opcional: remove a sombra pesada lateral no celular */
+    box-shadow: 10px 10px 15px rgba(6, 184, 169, 0.3);
   }
 
   .h1 {
