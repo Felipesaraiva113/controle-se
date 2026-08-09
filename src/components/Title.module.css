@@ -38,6 +38,7 @@
   .header {
     height: auto !important;
     padding: 15px 10px !important;
+    flex-grow: 1;
   }
   
   .h1 {
