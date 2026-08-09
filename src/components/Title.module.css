@@ -6,6 +6,7 @@
   max-width: 100% !important;
   height: 100px;
   box-shadow: 10px 10px 15px rgba(6, 184, 169, 0.3);
+  border-radius: 10px;
   
   /* Centralização do CONTEÚDO interno (Texto "CONTROLE-SE" + Ícone) */
   display: flex !important;
