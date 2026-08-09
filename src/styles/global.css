@@ -55,6 +55,10 @@ body {
   gap: 20px;
 }
 
+.container-grafico {
+  height: 500px;
+}
+
 /* ==========================================
    RESPONSIVIDADE: TABLETS E CELULARES (Até 912px)
    ========================================== */
@@ -74,5 +78,8 @@ body {
     flex-direction: column;
     gap: 10px;
     text-align: center;
+  }
+  .container-grafico {
+    height: 280px !important; /* Limita a altura no celular para o gráfico ficar compacto */
   }
 }

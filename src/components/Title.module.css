@@ -9,6 +9,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 10px;
 }
 
 .h1 {
@@ -26,11 +27,18 @@
   }
 }
 
+/* Correção do Header para Mobile (Até 430px) */
 @media (max-width: 430px) {
+  .header {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important; /* Permite a altura se adaptar ao conteúdo */
+    padding: 15px 10px !important;
+    box-shadow: none !important; /* Opcional: remove a sombra pesada lateral no celular */
+  }
+
   .h1 {
-    font-size: 20px;
+    font-size: 18px !important;
     text-align: center;
-    justify-content: center;
-    align-items: center;
   }
 }

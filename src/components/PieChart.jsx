@@ -4,16 +4,21 @@ import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from 'recha
 const COR_ENTRADA = '#08dd08'; 
 const COR_SAIDA = '#e71d36';    
 const COR_VAZIO = '#d3d3d3';    
+
 export default function GraficoFinanceiro({ transactions = [] }) {
   const totalEntradas = transactions
     .filter((t) => t.amount > 0)
     .reduce((acc, t) => acc + t.amount, 0);
+
   const totalSaidas = transactions
     .filter((t) => t.amount < 0)
     .reduce((acc, t) => acc + Math.abs(t.amount), 0);
+
   const isVazio = totalEntradas === 0 && totalSaidas === 0;
+
   let dataGrafico = [];
   let cores = [];
+
   if (isVazio) {
     dataGrafico = [{ name: 'Sem movimentações', value: 1 }];
     cores = [COR_VAZIO];
@@ -24,15 +29,18 @@ export default function GraficoFinanceiro({ transactions = [] }) {
     ];
     cores = [COR_ENTRADA, COR_SAIDA];
   }
+
   return (
-    <div style={{ width: '100%', height: 600 }} >
-      <ResponsiveContainer width="100%" height="100%" >
+    /* Mudança 1: A div externa usa 'container-grafico' para controlar a altura via CSS */
+    <div className="container-grafico" style={{ width: '100%' }}>
+      <ResponsiveContainer width="100%" height="100%">
         <PieChart>
           <Pie
             data={dataGrafico}
             cx="50%"
             cy="50%"
-            outerRadius={250}
+            /* Mudança 2: outerRadius em % faz o gráfico encolher dinamicamente conforme o container */
+            outerRadius="80%" 
             dataKey="value"
           >
             {dataGrafico.map((entry, index) => (
