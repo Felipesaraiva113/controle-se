@@ -1,43 +1,46 @@
 /* ==========================================
-   RESET E BASE
+   1. RESET E BASE
    ========================================== */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box !important;
   font-family: 'Courier New', Courier, monospace;
 }
 
 body {
   background-color: #000000;
   color: #ffffff;
-  overflow-x: hidden; /* Evita que a página role para os lados no celular */
+  overflow-x: hidden; /* Impede a tela de rolar para os lados no celular */
 }
 
+/* Container Raiz da Aplicação */
 .app {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 100%;
   max-width: 1450px;
   margin: 0 auto;
   padding: 20px;
 }
 
-/* Header principal */
+/* Container superior que abraça o Header */
 .app > div:first-child {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 30px;
+  width: 100% !important;
+  max-width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin-bottom: 25px;
 }
 
 /* ==========================================
-   GRID LAYOUT (DESKTOP PADRÃO: Acima de 912px)
+   2. GRID LAYOUT (DESKTOP PADRÃO: Acima de 912px)
    ========================================== */
 .grid-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* 2 colunas lado a lado */
+  grid-template-columns: 1fr 1fr; /* 2 colunas no desktop */
   gap: 20px;
   width: 100%;
 }
@@ -57,35 +60,26 @@ body {
 
 .container-grafico {
   height: 500px;
+  width: 100%;
 }
 
 /* ==========================================
-   RESPONSIVIDADE: TABLETS E CELULARES (Até 912px)
+   3. RESPONSIVIDADE (TABLETS E CELULARES - Até 912px)
    ========================================== */
 @media screen and (max-width: 912px) {
+  /* Define uma margem uniforme para TODA a aplicação no celular */
   .app {
-    padding: 10px;
+    padding: 15px !important;
   }
 
-  /* FORÇA O GRID A VIRAR 1 COLUNA ÚNICA (Painel 2 vai para baixo do 1) */
+  /* Transforma as 2 colunas em 1 coluna única (Painel direito vai para baixo) */
   .grid-layout {
     grid-template-columns: 1fr !important; 
-    gap: 30px;
-    padding: 0 !important;
+    gap: 20px !important;
   }
 
-  /* Ajusta o Header para não estourar em telas médias */
-  .app > div:first-child, .header-container {
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-  .app {
-    padding: 0 10px !important; /* Mesma margem interna para Header, Saldo, Gráfico e Form */
-  }
+  /* Reduz proporcionalmente o container do gráfico para não estourar o celular */
   .container-grafico {
-    height: 280px !important; /* Limita a altura no celular para o gráfico ficar compacto */
+    height: 280px !important;
   }
 }
