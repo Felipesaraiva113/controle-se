@@ -4,8 +4,9 @@ import { MdKeyboardDoubleArrowDown } from "react-icons/md";
 import classes from './List.module.css';
 
 function TransactionList({ transactions, onDeleteTransaction }) {
-    return (<div className={classes.div_listagem}>
-        <ul>
+    return ( <div className={classes.div_listagem}> 
+        {transactions.length > 0 ? (
+            <ul>
             {transactions.map((transaction) =>
             ( <li key={transaction.id}>
                 {transaction.description} R${Math.abs(transaction.amount)}
@@ -16,7 +17,9 @@ function TransactionList({ transactions, onDeleteTransaction }) {
             </span>
             </li>))}
         </ul>
-        
+        ): (
+            <p style={{textAlign: 'center'}}>Não há transações registradas</p>
+        )}         
     </div>
     );
 }
