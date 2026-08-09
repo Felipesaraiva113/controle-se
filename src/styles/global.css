@@ -71,13 +71,19 @@ body {
   .grid-layout {
     grid-template-columns: 1fr !important; 
     gap: 30px;
+    padding: 0 !important;
   }
 
   /* Ajusta o Header para não estourar em telas médias */
-  .app > div:first-child {
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
+  .app > div:first-child, .header-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .app {
+    padding: 0 10px !important; /* Mesma margem interna para Header, Saldo, Gráfico e Form */
   }
   .container-grafico {
     height: 280px !important; /* Limita a altura no celular para o gráfico ficar compacto */
