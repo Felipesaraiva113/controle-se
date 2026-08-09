@@ -46,7 +46,7 @@ function TransactionForm({ onAddTransaction, dataFormatada }) {
                 <option value='entrada'>Entrada</option>
                 <option value='saida'>Saída</option>
             </select>
-            <input type="number" placeholder="Quantia em R$"
+            <input type="number" placeholder="Valor"
                 step='0.01'
                 min='0'
                 value={amount}

@@ -1,23 +1,29 @@
+/* ==========================================
+   RESET E BASE
+   ========================================== */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Courier New', Courier, monospace;
-    
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Courier New', Courier, monospace;
 }
+
 body {
-    background-color: black;
-    color: white;
-    
+  background-color: #000000;
+  color: #ffffff;
+  overflow-x: hidden; /* Evita que a página role para os lados no celular */
 }
+
 .app {
   display: flex;
   flex-direction: column;
   width: 100%;
-  
+  max-width: 1450px;
   margin: 0 auto;
-  
+  padding: 20px;
 }
+
+/* Header principal */
 .app > div:first-child {
   width: 100%;
   display: flex;
@@ -25,30 +31,48 @@ body {
   align-items: center;
   margin-bottom: 30px;
 }
+
+/* ==========================================
+   GRID LAYOUT (DESKTOP PADRÃO: Acima de 912px)
+   ========================================== */
 .grid-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  max-width: 1450px; 
-  margin: 0 auto; 
+  grid-template-columns: 1fr 1fr; /* 2 colunas lado a lado */
+  gap: 20px;
   width: 100%;
 }
-.painel-esquerdo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-}
+
+.painel-esquerdo, 
 .painel-direito {
   display: flex;
   flex-direction: column;
-  gap: 20px; /* Espaçamento entre o Formulário e a Listagem */
   align-items: center;
   justify-content: flex-start;
+  width: 100%;
 }
-@media (max-width: 768px) {
-  .grid-layout {
-    grid-template-columns: 1fr;
+
+.painel-direito {
+  gap: 20px;
+}
+
+/* ==========================================
+   RESPONSIVIDADE: TABLETS E CELULARES (Até 912px)
+   ========================================== */
+@media screen and (max-width: 912px) {
+  .app {
+    padding: 10px;
   }
-  
+
+  /* FORÇA O GRID A VIRAR 1 COLUNA ÚNICA (Painel 2 vai para baixo do 1) */
+  .grid-layout {
+    grid-template-columns: 1fr !important; 
+    gap: 30px;
+  }
+
+  /* Ajusta o Header para não estourar em telas médias */
+  .app > div:first-child {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
 }

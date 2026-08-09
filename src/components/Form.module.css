@@ -1,42 +1,68 @@
+/* DESKTOP (Inalterado) */
 .form {
-    background-color: rgba(248, 0, 0, 1);
-    padding: 50px;
-    align-content: center;
-    width: 70%;
-    border-radius: 10px;
-    margin-top: 50px;
-    box-shadow: 10px 10px 15px rgba(6, 184, 169, 0.3);
-    display: flex;
+  background-color: rgba(248, 0, 0, 1);
+  padding: 50px;
+  align-content: center;
+  width: 70%;
+  border-radius: 10px;
+  margin-top: 50px;
+  box-shadow: 10px 10px 15px rgba(6, 184, 169, 0.3);
+  display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 }
+
 .input {
-    padding: 5px;
-    margin: 5px;
-    border-radius: 5px;
-    border: none;
-    height: 50px;
-    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.4);
-    background-color: rgb(228, 228, 228);
-    color: black;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+  border: none;
+  height: 50px;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.4);
+  background-color: rgb(228, 228, 228);
+  color: black;
 }
+
 .button {
-    padding: 5px;
-    margin: 5px;
-    border-radius: 5px;
-    border: none;
-    height: 50px;
-    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.4);
-    cursor: pointer;
-    background-color: rgb(0, 255, 191);
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+  border: none;
+  height: 50px;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  background-color: rgb(0, 255, 191);
 }
+
 .select {
-    padding: 5px;
-    margin: 5px;
-    border-radius: 5px;
-    border: none;
-    height: 50px;
-    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.4);
-    background-color: rgb(255, 187, 0);
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+  border: none;
+  height: 50px;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.4);
+  background-color: rgb(255, 187, 0);
+  cursor: pointer;
+}
+
+/* RESPONSIVO */
+@media (max-width: 912px) {
+  .form {
+    width: 100% !important; /* Ocupa a largura total da coluna */
+    padding: 30px 20px !important; /* Reduz o padding interno gigante de 50px */
+  }
+}
+
+@media (max-width: 430px) {
+  .form {
+    flex-direction: column; /* Empilha os campos no celular */
+    padding: 20px 15px;
+    margin-top: 20px;
+  }
+
+  .input, .select, .button {
+    width: 100%; /* Todos os campos ocupam a largura total no mobile */
+    margin: 5px 0;
+  }
 }

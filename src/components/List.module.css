@@ -1,4 +1,4 @@
-/* Container principal vermelho com rolagem */
+/* DESKTOP (Inalterado) */
 .div_listagem {
   background-color: #ff0000;
   border-radius: 3px;
@@ -6,14 +6,11 @@
   box-shadow: 3px 10px 15px rgba(6, 184, 169, 0.3);
   margin-top: 20px;
   width: 600px;
-  
-  /* Mantém a altura fixa e adiciona a barra de rolagem quando necessário */
   max-height: 580px;
   overflow-y: auto;
   box-sizing: border-box;
 }
 
-/* Customização da barra de rolagem interna */
 .div_listagem::-webkit-scrollbar {
   width: 6px;
 }
@@ -32,7 +29,6 @@
   background: rgba(255, 255, 255, 0.8);
 }
 
-/* Removendo marcadores padrões da lista (ul) */
 .div_listagem ul {
   list-style: none;
   margin: 0;
@@ -42,40 +38,23 @@
   gap: 10px;
 }
 
-/* Estilo de cada linha (li) com GRID interno para alinhar colunas perfeitamente */
 .div_listagem li {
   background-color: #ffffff;
   color: #111111;
   padding: 16px 20px;
   border-radius: 8px;
   font-family: inherit;
-  font-size: 24px; /* Ajustado levemente para caber confortavelmente em 600px */
+  font-size: 24px;
   font-weight: 500;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-
-  /* Define alinhamento em colunas fixas */
   display: grid;
-  /* Colunas: 
-     1. Descrição (largura flexível)
-     2. Valor (largura fixa)
-     3. Seta (largura fixa centralizada)
-     4. Data (largura fixa)
-     5. Lixeira (largura fixa no final)
-  */
   grid-template-columns: 140px 80px 40px 160px 40px;
   align-items: center;
   justify-content: space-between;
   text-align: left;
-}
-
-/* Opcional: Para ocultar os caracteres de barra '|' soltos que ficam desalinhados */
-/* Se quiser sumir com as barras do JSX mantendo o visual limpo, adicione isso: */
-.div_listagem li {
-  /* Alinha os textos e ícones nas colunas correspondentes */
   white-space: nowrap;
 }
 
-/* Estilização para o ícone de Deletar (Lixeira) */
 .div_listagem li span {
   cursor: pointer;
   display: inline-flex;
@@ -84,7 +63,7 @@
   padding: 4px;
   color: #333333;
   transition: color 0.2s ease, transform 0.2s ease;
-  justify-self: end; /* Gruda a lixeira na ponta direita */
+  justify-self: end;
 }
 
 .div_listagem li span:hover {
@@ -92,8 +71,29 @@
   transform: scale(1.15);
 }
 
-/* Estilização para os ícones (setas) */
 .div_listagem li svg {
   vertical-align: middle;
-  justify-self: center; /* Centraliza a seta no meio da sua coluna */
+  justify-self: center;
+}
+
+/* RESPONSIVO */
+@media (max-width: 912px) {
+  .div_listagem {
+    width: 100% !important; /* Libera os 600px fixos em telas menores */
+    max-width: 100%;
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 430px) {
+  .div_listagem {
+    padding: 10px;
+    overflow-x: auto; /* Permite rolar a lista para o lado caso a tela do celular seja muito estreita */
+  }
+
+  .div_listagem li {
+    font-size: 16px !important; /* Reduz fonte de 24px para caber no celular sem estourar */
+    padding: 10px 12px;
+    grid-template-columns: 100px 60px 30px 100px 30px;
+  }
 }
