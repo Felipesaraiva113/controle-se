@@ -11,7 +11,7 @@
 body {
   background-color: #000000;
   color: #ffffff;
-  overflow-x: hidden; /* Impede a tela de rolar para os lados no celular */
+  overflow-x: hidden;
 }
 
 /* Container Raiz da Aplicação */
@@ -27,11 +27,11 @@ body {
 
 /* Container superior que abraça o Header */
 .app > div:first-child {
-  width: 100% !important;
-  max-width: 100% !important;
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
+  width: 100%;
+  max-width: 600px; /* Ajusta o container do título para ter o mesmo tamanho máximo dos outros elementos */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 25px;
 }
 
@@ -40,9 +40,10 @@ body {
    ========================================== */
 .grid-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* 2 colunas no desktop */
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
   width: 100%;
+  max-width: 1200px; /* Limita a largura total do conteúdo */
 }
 
 .painel-esquerdo, 
@@ -61,24 +62,24 @@ body {
 .container-grafico {
   height: 500px;
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 /* ==========================================
    3. RESPONSIVIDADE (TABLETS E CELULARES - Até 912px)
    ========================================== */
 @media screen and (max-width: 912px) {
-  /* Define uma margem uniforme para TODA a aplicação no celular */
   .app {
     padding: 15px !important;
   }
 
-  /* Transforma as 2 colunas em 1 coluna única (Painel direito vai para baixo) */
   .grid-layout {
     grid-template-columns: 1fr !important; 
     gap: 20px !important;
+    max-width: 100%;
   }
 
-  /* Reduz proporcionalmente o container do gráfico para não estourar o celular */
   .container-grafico {
     height: 280px !important;
   }

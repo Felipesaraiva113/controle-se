@@ -1,12 +1,15 @@
-/* DESKTOP (Inalterado) */
+/* ==========================================
+   DESKTOP (ACIMA DE 912px)
+   ========================================== */
 .div_listagem {
   background-color: #ff0000;
   border-radius: 3px;
   padding: 16px;
   box-shadow: 3px 10px 15px rgba(6, 184, 169, 0.3);
   margin-top: 20px;
-  width: 600px;
-  max-height: 580px;
+  width: 100%;
+  max-width: 600px; /* Garante o tamanho fixo no desktop */
+  max-height: 500px;
   overflow-y: auto;
   box-sizing: border-box;
 }
@@ -14,17 +17,14 @@
 .div_listagem::-webkit-scrollbar {
   width: 6px;
 }
-
 .div_listagem::-webkit-scrollbar-track {
   background: rgba(0, 0, 0, 0.1);
   border-radius: 4px;
 }
-
 .div_listagem::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.5);
   border-radius: 4px;
 }
-
 .div_listagem::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.8);
 }
@@ -52,7 +52,8 @@
   align-items: center;
   justify-content: space-between;
   text-align: left;
-  white-space: nowrap;
+  white-space: nowrap; /* FORÇADO NO DESKTOP PARA NÃO QUEBRAR */
+  box-sizing: border-box;
 }
 
 .div_listagem li span {
@@ -65,35 +66,37 @@
   transition: color 0.2s ease, transform 0.2s ease;
   justify-self: end;
 }
-
 .div_listagem li span:hover {
   color: #d32f2f;
   transform: scale(1.15);
 }
-
 .div_listagem li svg {
   vertical-align: middle;
   justify-self: center;
 }
 
-/* RESPONSIVO */
+/* ==========================================
+   RESPONSIVO (TABLETS E CELULARES - Até 912px)
+   ========================================== */
 @media (max-width: 912px) {
   .div_listagem {
-    width: 100% !important; /* Libera os 600px fixos em telas menores */
-    max-width: 100%;
-    overflow-x: auto;
+    margin-top: 0;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden;
   }
 }
 
 @media (max-width: 430px) {
   .div_listagem {
     padding: 10px;
-    overflow-x: auto; /* Permite rolar a lista para o lado caso a tela do celular seja muito estreita */
   }
 
   .div_listagem li {
-    font-size: 16px !important; /* Reduz fonte de 24px para caber no celular sem estourar */
+    font-size: 14px !important;
     padding: 10px 12px;
-    grid-template-columns: 100px 60px 30px 100px 30px;
+    grid-template-columns: minmax(80px, 1fr) 60px 30px 100px 30px; 
+    white-space: normal; /* Permite quebrar linha SOMENTE NO CELULAR */
+    word-break: break-all;
   }
 }
