@@ -25,7 +25,6 @@
 /* RESPONSIVO */
 @media (max-width: 912px) {
   .header {
-    max-width: 100% !important; /* No celular, ocupa toda a largura disponível */
     height: auto !important;
     padding: 25px !important; /* Ajustado para igualar o padding do H2 */
     margin-bottom: 20px !important;
