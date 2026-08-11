@@ -14,7 +14,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Container Raiz da Aplicação */
+
 .app {
   display: flex;
   flex-direction: column;
@@ -25,10 +25,10 @@ body {
   padding: 20px;
 }
 
-/* Container superior que abraça o Header */
+
 .app > div:first-child {
   width: 100%;
-  max-width: 600px; /* Ajusta o container do título para ter o mesmo tamanho máximo dos outros elementos */
+  max-width: 600px; 
   display: flex;
   justify-content: center;
   align-items: center;
